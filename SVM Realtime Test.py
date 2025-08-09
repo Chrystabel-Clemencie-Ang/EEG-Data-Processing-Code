@@ -15,6 +15,8 @@ import matplotlib
 matplotlib.use('TkAgg')  # Use Tkinter-compatible backend for Matplotlib
 
 
+
+#ini koding untuk testing model svm
 # Load model
 try:
     model = joblib.load("svm_eeg_model.pkl")
