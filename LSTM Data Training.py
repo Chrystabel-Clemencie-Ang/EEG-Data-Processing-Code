@@ -81,3 +81,22 @@ plt.legend()
 
 plt.tight_layout()
 plt.show()
+
+from sklearn.metrics import classification_report, confusion_matrix, ConfusionMatrixDisplay
+
+# === 6. Evaluasi model ===
+# Prediksi probabilitas
+y_pred_prob = model.predict(X_test)
+# Ambil kelas dengan probabilitas tertinggi
+y_pred = np.argmax(y_pred_prob, axis=1)
+
+# Classification report
+print("=== Classification Report ===")
+print(classification_report(y_test, y_pred, target_names=label_encoder.classes_))
+
+# Confusion matrix
+cm = confusion_matrix(y_test, y_pred)
+disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=label_encoder.classes_)
+disp.plot(cmap=plt.cm.Blues, values_format="d")
+plt.title("Confusion Matrix")
+plt.show()
