@@ -18,7 +18,7 @@ y = df['label'].values
 print(X.shape)
 
 # 3. Bagi dataset untuk training dan testing
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=42, stratify=y)
 
 # 4. Buat pipeline: normalisasi + SVM
 pipeline = make_pipeline(
